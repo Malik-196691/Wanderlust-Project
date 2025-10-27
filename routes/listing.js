@@ -4,7 +4,8 @@ const wrapAsync = require("../utils/wrapAsync");
 const { isLoggedIn, isOwner } = require("../middleware");
 const listingsController = require("../controllers/listings");
 const multer = require("multer");
-const { storage } = require("../cloudConfig");
+const storage = multer.diskStorage({});
+const { cloudinary } = require("../cloudConfig");
 const upload = multer({ storage });
 
 
