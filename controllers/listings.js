@@ -1,5 +1,5 @@
 const Listing = require("../models/listing");
-const ExpressError = require("../utils/ExpressError.js");
+const ExpressError = require("../utils/expressError");
 const { listingSchema } = require("../schema");
 
 module.exports.index = async (req, res) => {
