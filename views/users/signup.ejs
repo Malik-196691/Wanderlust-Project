@@ -1,0 +1,73 @@
+<% layout('layouts/broilerplate') %>
+
+<body class="bg-light">
+  <div
+    class="container d-flex justify-content-center align-items-center vh-100"
+  >
+    <div
+      class="card shadow-lg border-0 rounded-4"
+      style="max-width: 450px; width: 100%"
+    >
+      <div class="card-body p-4">
+        <h2 class="text-center text-danger mb-4 fw-bold">Create Account</h2>
+        <form
+          action="/register"
+          method="POST"
+          class="needs-validation"
+          novalidate
+        >
+          <div class="mb-3">
+            <label for="username" class="form-label fw-semibold"
+              >Username</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="form-control form-control-lg"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control form-control-lg"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="password" class="form-label fw-semibold"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control form-control-lg"
+              placeholder="Create a password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-danger w-100 py-2 fw-semibold">
+            Sign Up
+          </button>
+
+          <div class="text-center mt-3">
+            <small class="text-muted"
+              >Already have an account?
+              <a href="/login" class="text-decoration-none">Login</a>
+            </small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

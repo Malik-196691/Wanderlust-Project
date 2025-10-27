@@ -1,0 +1,63 @@
+<nav
+  class="navbar navbar-expand-md navbar-light bg-light shadow-sm border-bottom mb-2"
+>
+  <div class="container">
+    <a
+      class="navbar-brand fw-bold text-primary d-flex align-items-center"
+      href="/"
+    >
+      <i class="fa-solid fa-plane-departure me-2"></i>Wanderlust
+    </a>
+
+    <form class="d-flex ms-auto" role="search">
+      <div class="input-group">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search destinations..."
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-primary" type="submit">
+          <i class="fa-solid fa-search"></i>
+        </button>
+      </div>
+    </form>
+
+    <button
+      class="navbar-toggler ms-auto"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold text-dark" href="/listings">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold text-dark" href="/listings/new"
+            >Become a host</a
+          >
+        </li>
+        <% if (!currentUser) { %>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold text-dark" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold text-dark" href="/signup">Signup</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold text-danger" href="/logout">Logout</a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
