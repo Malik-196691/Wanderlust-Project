@@ -1,28 +1,12 @@
-<nav
-  class="navbar navbar-expand-md navbar-light bg-light shadow-sm border-bottom mb-2"
->
-  <div class="container">
-    <a
-      class="navbar-brand fw-bold text-primary d-flex align-items-center"
-      href="/"
-    >
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm border-bottom py-2">
+  <div class="container d-flex align-items-center">
+
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold text-primary d-flex align-items-center me-3" href="/">
       <i class="fa-solid fa-plane-departure me-2"></i>Wanderlust
     </a>
 
-    <form class="d-flex ms-auto" role="search">
-      <div class="input-group">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search destinations..."
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-primary" type="submit">
-          <i class="fa-solid fa-search"></i>
-        </button>
-      </div>
-    </form>
-
+    <!-- Toggler button (mobile only) -->
     <button
       class="navbar-toggler ms-auto"
       type="button"
@@ -35,29 +19,61 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Navbar collapse -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
+
+      <!-- Search form (desktop) -->
+      <form class="d-none d-md-flex me-3  navbar-search" role="search">
+        <div class="input-group">
+          <input
+            class="form-control rounded-start"
+            type="search"
+            placeholder="Search destinations..."
+            aria-label="Search"
+          />
+          <button class="btn btn-primary rounded-end" type="submit">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- Navbar links -->
+      <ul class="navbar-nav align-items-center">
         <li class="nav-item">
-          <a class="nav-link fw-semibold text-dark" href="/listings">Explore</a>
+          <a class="nav-link fw-semibold text-dark hover-primary" href="/listings">Explore</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-semibold text-dark" href="/listings/new"
-            >Become a host</a
-          >
+          <a class="nav-link fw-semibold text-dark hover-primary" href="/listings/new">Host</a>
         </li>
         <% if (!currentUser) { %>
         <li class="nav-item">
-          <a class="nav-link fw-semibold text-dark" href="/login">Login</a>
+          <a class="nav-link fw-semibold text-dark hover-primary" href="/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-semibold text-dark" href="/signup">Signup</a>
+          <a class="nav-link fw-semibold text-dark hover-primary" href="/signup">Signup</a>
         </li>
         <% } else { %>
         <li class="nav-item">
-          <a class="nav-link fw-semibold text-danger" href="/logout">Logout</a>
+          <a class="nav-link fw-semibold text-danger hover-danger" href="/logout">Logout</a>
         </li>
         <% } %>
       </ul>
+
+      <!-- Search form (mobile) -->
+      <form class="d-md-none mt-2 navbar-search w-100" role="search">
+        <div class="input-group">
+          <input
+            class="form-control rounded-start"
+            type="search"
+            placeholder="Search destinations..."
+            aria-label="Search"
+          />
+          <button class="btn btn-primary rounded-end" type="submit">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </div>
+      </form>
+
     </div>
   </div>
 </nav>

@@ -1,66 +1,93 @@
 <% layout('layouts/broilerplate') %>
 
-<h3 style="margin-top: 2rem" class="new-heading">Create a New Listing</h3>
+<h3 class="new-heading text-center mt-5 mb-4">Create a New Listing</h3>
+
 <div class="row justify-content-center">
-  <div class="col-8">
+  <div class="col-lg-6 col-md-8 col-11">
     <form
-      class="new-form needs-validation"
+      class="new-form needs-validation p-4 shadow-lg rounded"
       enctype="multipart/form-data"
       action="/listings"
       method="post"
       novalidate
     >
-      <label for="title" class="form-label">Title:</label>
-      <input type="text" id="title" name="title" class="form-control" /><br />
+      <!-- Title -->
+      <div class="mb-3">
+        <label for="title" class="form-label fw-semibold">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          class="form-control form-control-lg"
+          required
+        />
+      </div>
 
-      <label for="description" class="form-label">Description:</label>
-      <textarea
-        id="description"
-        name="description"
-        required
-        class="form-control"
-      ></textarea
-      ><br />
+      <!-- Description -->
+      <div class="mb-3">
+        <label for="description" class="form-label fw-semibold"
+          >Description</label
+        >
+        <textarea
+          id="description"
+          name="description"
+          rows="3"
+          class="form-control form-control-lg"
+          required
+        ></textarea>
+      </div>
 
-      <label for="image" class="form-label">Upload Image:</label>
-      <input
-        type="file"
-        id="image"
-        name="image"
-        required
-        class="form-control"
-      />
-      <br />
+      <!-- Image -->
+      <div class="mb-3">
+        <label for="image" class="form-label fw-semibold">Upload Image</label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          class="form-control form-control-lg"
+          required
+        />
+      </div>
 
-      <label for="price" class="form-label">Price:</label>
-      <input
-        type="number"
-        id="price"
-        name="price"
-        required
-        class="form-control"
-      /><br />
+      <!-- Price -->
+      <div class="mb-3">
+        <label for="price" class="form-label fw-semibold">Price</label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          class="form-control form-control-lg"
+          required
+        />
+      </div>
 
-      <label for="country" class="form-label">Country:</label>
-      <input
-        type="text"
-        id="country"
-        name="country"
-        required
-        class="form-control"
-      /><br />
+      <!-- Country -->
+      <div class="mb-3">
+        <label for="country" class="form-label fw-semibold">Country</label>
+        <input
+          type="text"
+          id="country"
+          name="country"
+          class="form-control form-control-lg"
+          required
+        />
+      </div>
 
-      <label for="location" class="form-label">Location:</label>
-      <input
-        type="text"
-        id="location"
-        name="location"
-        required
-        class="form-control"
-      /><br />
+      <!-- Location -->
+      <div class="mb-4">
+        <label for="location" class="form-label fw-semibold">Location</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          class="form-control form-control-lg"
+          required
+        />
+      </div>
 
-      <button class="btn btn-dark" type="submit">Create Listing</button>
-      <br />
+      <button class="btn btn-primary btn-lg w-100 submit-btn" type="submit">
+        Create Listing
+      </button>
     </form>
   </div>
 </div>
