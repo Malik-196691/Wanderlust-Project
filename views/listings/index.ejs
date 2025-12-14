@@ -14,14 +14,16 @@
     { icon: "fa-solid fa-snowflake", label: "Arctic" },
     { icon: "fa-solid fa-umbrella-beach", label: "Beach" },
     { icon: "fa-solid fa-tree", label: "Forest" },
-    { icon: "fa-solid fa-igloo", label: "Igloos" }
+   
   ]; %>
 
   <% filters.forEach(f => { %>
-    <div class="filter">
-      <i class="<%= f.icon %>"></i>
-      <p><%= f.label %></p>
-    </div>
+    <a href="/listings?category=<%= f.label %>" class="filter-link" style="text-decoration: none; color: inherit;">
+      <div class="filter <%= (typeof selectedCategory !== 'undefined' && selectedCategory === f.label) ? 'active' : '' %>">
+        <i class="<%= f.icon %>"></i>
+        <p><%= f.label %></p>
+      </div>
+    </a>
   <% }) %>
 
   <!-- Tax Toggle -->

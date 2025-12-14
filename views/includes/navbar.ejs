@@ -23,11 +23,12 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 
       <!-- Search form (desktop) -->
-      <form class="d-none d-md-flex me-3  navbar-search" role="search">
+      <form class="d-none d-md-flex me-3  navbar-search" role="search" action="/listings" method="GET">
         <div class="input-group">
           <input
             class="form-control rounded-start"
             type="search"
+            name="search"
             placeholder="Search destinations..."
             aria-label="Search"
           />
@@ -60,11 +61,12 @@
       </ul>
 
       <!-- Search form (mobile) -->
-      <form class="d-md-none mt-2 navbar-search w-100" role="search">
+      <form class="d-md-none mt-2 navbar-search w-100" role="search" action="/listings" method="GET">
         <div class="input-group">
           <input
             class="form-control rounded-start"
             type="search"
+            name="search"
             placeholder="Search destinations..."
             aria-label="Search"
           />

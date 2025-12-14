@@ -7,9 +7,31 @@ const { cloudinary } = require("../cloudConfig");
 // GET all listings
 // ----------------------------------
 module.exports.index = async (req, res) => {
-  const listings = await Listing.find({});
-  res.render("listings/index.ejs", { listings });
+  const { category, search } = req.query;
+  let query = {};
+
+  if (category) {
+    query.category = category;
+  }
+
+  if (search) {
+    const regex = new RegExp(escapeRegex(search), 'i');
+    query.$or = [
+      { title: regex },
+      { location: regex },
+      { country: regex },
+    ];
+    // Also try to match category if search term matches a category
+    query.$or.push({ category: regex });
+  }
+
+  const listings = await Listing.find(query);
+  res.render("listings/index.ejs", { listings, selectedCategory: category });
 };
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
 
 // ----------------------------------
 // Render new form
@@ -101,6 +123,7 @@ module.exports.updateListing = async (req, res) => {
   listing.price = req.body.price;
   listing.location = req.body.location;
   listing.country = req.body.country;
+  listing.category = req.body.category;
 
   // If new image uploaded
   if (req.file) {

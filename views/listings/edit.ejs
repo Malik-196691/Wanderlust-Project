@@ -45,6 +45,23 @@
               <label for="description">Description</label>
             </div>
 
+            <!-- ✅ Category -->
+            <div class="form-floating mb-3">
+              <select
+                id="category"
+                name="category"
+                class="form-select rounded-3"
+                required
+              >
+                <option value="" disabled>Select a category</option>
+                <% const categories = ["Trending", "Rooms", "Cities", "Mountains", "Castles", "Pools", "Camping", "Farms", "Arctic", "Beach", "Forest", "Igloos", "Boat", "Desert", "Skiing", "Dome", "Golf", "Vineyard", "Lake", "Eco-friendly", "Tiny-home", "Luxury", "Historic", "Island", "Mansion", "Treehouse", "Yurt", "Container", "Caravan", "Houseboat", "Towers", "Tropical", "Windy", "Snow", "Cave", "Barns"]; %>
+                <% categories.forEach(cat => { %>
+                  <option value="<%= cat %>" <%= listing.category === cat ? 'selected' : '' %>><%= cat %></option>
+                <% }) %>
+              </select>
+              <label for="category">Category</label>
+            </div>
+
             <!-- ✅ Current Image Preview -->
             <div class="mb-3 text-center">
               <p class="fw-semibold mb-2">Current Image</p>

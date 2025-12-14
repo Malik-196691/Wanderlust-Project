@@ -13,7 +13,12 @@ const listingSchema = new mongoose.Schema({
   },
   price: Number,
   location: String,
+
   country: String,
+  category: {
+    type: String,
+    enum: ["Trending", "Rooms", "Cities", "Mountains", "Castles", "Pools", "Camping", "Farms", "Arctic", "Beach", "Forest", "Igloos", "Boat", "Desert", "Skiing", "Dome", "Golf", "Vineyard", "Lake", "Eco-friendly", "Tiny-home", "Luxury", "Historic", "Island", "Mansion", "Treehouse", "Yurt", "Container", "Caravan", "Houseboat", "Towers", "Tropical", "Windy", "Snow", "Desert", "Cave", "Barns"], // Add more if needed
+  },
   reviews: [
     {
       type: mongoose.Schema.Types.ObjectId,
